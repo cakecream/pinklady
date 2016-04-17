@@ -7,16 +7,16 @@ public class Main {
 	public static void main(String[] args){
 		JFrame frame = new JFrame("Alien Attack");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(700, 650);
 		frame.getContentPane().setLayout(new BorderLayout());
+		frame.setSize(700, 650);
 		
 		SpaceShip v = new SpaceShip(330, 550, 40, 40);
 		GamePanel gp = new GamePanel();
 		GameEngine engine = new GameEngine(gp, v);
-		frame.addKeyListener(engine);
-		frame.getContentPane().add(gp, BorderLayout.CENTER);
-		frame.setVisible(true);
 		
+		frame.getContentPane().add(gp, BorderLayout.CENTER);
+		frame.addKeyListener(engine);
+		frame.setVisible(true);
 		engine.start();
 	}
 }
